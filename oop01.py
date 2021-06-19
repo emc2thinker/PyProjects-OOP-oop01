@@ -18,3 +18,16 @@ class Employee:
 
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amount) # accessing the class variable BUT....
+
+    @classmethod
+    def set_raise_amt(cls, amount):
+        cls.raise_amount = amount
+
+    # Example using a class method as a constuctor
+    @classmethod
+    def from_string(cls, emp_string):
+        first, last, pay = emp_string.split('-') # parsing the param
+        return cls(first, last, pay)    # Effectively creating an object from the class constructor: Employee(self, first, last, pay) 
+                                        # and returning that object as:
+                                        # new_employee = Employee.from_string('Tony-Lacson-8000')
+            
