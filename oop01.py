@@ -30,4 +30,10 @@ class Employee:
         return cls(first, last, pay)    # Effectively creating an object from the class constructor: Employee(self, first, last, pay) 
                                         # and returning that object as:
                                         # new_employee = Employee.from_string('Tony-Lacson-8000')
+
+    @staticmethod
+    def is_workday(day):  # Static methods don't take 'self' or 'cls' as parameters and hence the method should have no association with instance or class attributes.
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
             
