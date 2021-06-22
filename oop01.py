@@ -36,6 +36,15 @@ class Employee:
         if day.weekday() == 5 or day.weekday() == 6:
             return False
         return True
+
+    def __repr__(self):
+        return "Employee(('{}, '{}', {})".format(self.firs, self.last, self.pay)
+
+    def __add__(self, other):
+        return self.pay + other.pay
+
+    def __len__(self):
+        return len(self.fullname())
             
 
 class Developer(Employee):
@@ -65,3 +74,11 @@ class Maanger(Employee):
     def print_emp(self):
         for emp in self.employees:
             print('-->', emp.fullname())
+
+########
+## Dunder Methods
+
+## __init__
+## __repr__
+## __str__
+
